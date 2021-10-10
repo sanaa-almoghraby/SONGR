@@ -1,0 +1,14 @@
+.div1{
+font-family: cursive;
+  border: 2px solid black;
+  outline: #304FD9 solid 10px;
+  margin: auto;
+  padding: 20px;
+  text-align: left;
+
+}
+.img{
+outline : #304FD9 solid 4px;
+ width: 400px;
+ height: 300px;
+}
