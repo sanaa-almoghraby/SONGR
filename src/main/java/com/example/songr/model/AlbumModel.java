@@ -1,18 +1,37 @@
 package com.example.songr.model;
 
-public class albumModel {
+import javax.persistence.*;
+
+@Entity
+public class AlbumModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+
+    private Long id;
     private String title;
     private String artist;
     private int songCount;
     private int length;
     private String imageUrl;
 
-    public albumModel(String title, String artist, int songCount, int length, String imageUrl) {
+    public AlbumModel() {
+    }
+
+    public AlbumModel(String title, String artist, int songCount, int length, String imageUrl) {
         this.title = title;
         this.artist = artist;
         this.songCount = songCount;
         this.length = length;
         this.imageUrl = imageUrl;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
