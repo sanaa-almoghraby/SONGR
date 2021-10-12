@@ -1,7 +1,9 @@
 package com.example.songr.controller;
 
-import com.example.songr.Repository.PostRepository;
+import com.example.songr.Repository.AlbumRepository;
+import com.example.songr.Repository.SongRepository;
 import com.example.songr.model.AlbumModel;
+import com.example.songr.model.Song;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +13,7 @@ import org.springframework.web.servlet.view.RedirectView;
 @Controller
 public class Helloworld {
     @Autowired
-    private PostRepository albumRepository;
+    private AlbumRepository albumRepository;
 
     @ResponseBody
     @PostMapping("/albums")
@@ -38,4 +40,5 @@ public class Helloworld {
         model.addAttribute("Text", capitalizeText);
         return "Capitalize";
     }
+
 }

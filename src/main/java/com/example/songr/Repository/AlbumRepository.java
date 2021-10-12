@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface PostRepository extends JpaRepository<AlbumModel,Long> {
+public interface AlbumRepository extends JpaRepository<AlbumModel,Long> {
 }
