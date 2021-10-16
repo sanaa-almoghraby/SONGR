@@ -1,6 +1,7 @@
 package com.example.songr.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class AlbumModel {
@@ -9,11 +10,19 @@ public class AlbumModel {
     @Column(name = "id", nullable = false)
 
     private Long id;
+
     private String title;
     private String artist;
+    private String imageUrl;
+
     private int songCount;
     private int length;
-    private String imageUrl;
+
+
+
+
+    @OneToMany(mappedBy = "album")
+    private List<Song> songs;
 
     public AlbumModel() {
     }
@@ -73,4 +82,12 @@ public class AlbumModel {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
+    }
+
 }
