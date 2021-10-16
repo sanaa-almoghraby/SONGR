@@ -8,23 +8,26 @@ import javax.persistence.*;
 public class Song {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "id",nullable = false)
+    private Long id;
     private String title;
-    private String length;
-    private String trackNumber;
+    private int length;
+    private int trackNumber;
 
 
     @ManyToOne()
+    @JoinColumn(name = "album_id")
     private AlbumModel album;
 
     public Song(){
 
     }
 
-    public Song( String title, String length, String trackNumber) {
+    public Song(String title, int length, int trackNumber, AlbumModel album) {
         this.title = title;
         this.length = length;
         this.trackNumber = trackNumber;
+        this.album = album;
     }
 
     public String getTitle() {
@@ -35,19 +38,19 @@ public class Song {
         this.title = title;
     }
 
-    public String getLength() {
+    public double getLength() {
         return length;
     }
 
-    public void setLength(String length) {
+    public void setLength(int length) {
         this.length = length;
     }
 
-    public String getTrackNumber() {
+    public int getTrackNumber() {
         return trackNumber;
     }
 
-    public void setTrackNumber(String trackNumber) {
+    public void setTrackNumber(int trackNumber) {
         this.trackNumber = trackNumber;
     }
 
@@ -59,7 +62,7 @@ public class Song {
         this.album = album;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

@@ -20,3 +20,12 @@ Update your Album model so that it can be saved in a database.
 An Album has a title, an artist, a songCount, a length (in seconds), and an imageUrl that is a link to that album’s art.
 A user should be able to see information about all the albums on the site.
 A user should be able to add albums to the site.
+
+
+# Lab: 13 - Related Resources and Integration Testing
+
+Create a Song model.
+A Song has a title, a length (in seconds), a trackNumber, and the album on which that song appears.
+Ensure that the relationship between Albums and Songs is appropriately set up.
+
+

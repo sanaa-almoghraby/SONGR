@@ -10,11 +10,14 @@ public class AlbumModel {
     @Column(name = "id", nullable = false)
 
     private Long id;
+
     private String title;
     private String artist;
+    private String imageUrl;
+
     private int songCount;
     private int length;
-    private String imageUrl;
+
 
 
 
